@@ -1,0 +1,20 @@
+:root {
+  --Cinza: #bdbdbd;
+  --AzulHokage: #002855;
+  --AmareloRaikage: #FDCB58;
+  --PretoAkatsuki: #000000;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #cccccc, #666666);
+  height: 100vh;
+  margin: 0; 
+  padding: 0; 
+}
