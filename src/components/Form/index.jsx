@@ -3,19 +3,33 @@ import "./style.css"
 
 const index = () => {
 
-    const [data, setData] = useState()
+    const [name, setName] = useState("")
 
-    useEffect(() => {
-        fetch(`https://www.narutodb.xyz/api/character/search?name=${name}`)
-        .then((response) => response.json())
-        .then((data) => setData(data))
-    }, [])
+    const [data, setData] = useState(null)
+
+    const fetchData = (e) => {
+      e.preventDefault()
+      fetch(`https://www.narutodb.xyz/api/character/search?name=${name}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Erro na requisição');
+          }
+          return response.json();
+        })
+        .then((responseData) => {
+          setData(responseData);
+          console.log(data)
+        })
+        .catch((error) => {
+          console.error('Erro ao buscar os dados:', error);
+        });
+    };
 
   return (
     <div>
         <form>
-            <input type="text" name="" id="" placeholder="Digite o nome do personagem..."/>
-            <button>Pesquisar</button>
+            <input type="text" onChange={(e) => setName(e.target.value)} value={name} placeholder="Digite o nome do personagem..."/>
+            <button onClick={fetchData}>Pesquisar</button>
         </form>
     </div>
   )
