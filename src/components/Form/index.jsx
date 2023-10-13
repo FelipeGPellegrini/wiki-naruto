@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./style.css"
 
-const index = () => {
+const index = ({InfosCharacter}) => {
 
     const [name, setName] = useState("")
 
@@ -18,7 +18,7 @@ const index = () => {
         })
         .then((responseData) => {
           setData(responseData);
-          console.log(data)
+          InfosCharacter(responseData)
         })
         .catch((error) => {
           console.error('Erro ao buscar os dados:', error);

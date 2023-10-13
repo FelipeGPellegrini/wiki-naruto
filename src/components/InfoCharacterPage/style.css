@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+
+.containerName > h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 32px;
+    text-shadow: 1px 2px 1px var(--AmareloRaikage);
+    font-size: 32px;
+}
+
+.containerImage {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.containerImage > img {
+    border-radius: 10%;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.441);
+    transition: all 500ms;
+}
+
+.containerImage > img:hover {
+    scale: 120%;
+}
+
+.containerParents {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 1px 2px 1px var(--AmareloRaikage);
+}
+
+.containerParents > h3 {
+    margin: 10px;
+}
+
+.itemClan {
+    display: inline;
+}
+
+.personalInfos {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 1px 2px 2px var(--AmareloRaikage);
+    font-size: 16px;
+}
+
+.personalInfos > h3 {
+    margin: 10px;
+}
