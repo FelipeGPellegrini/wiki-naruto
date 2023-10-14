@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Form from './components/Form'
 import InfoCharacterPage from './components/InfoCharacterPage'
 import { useState } from 'react'
+import { Route, Routes} from 'react-router-dom'
 
 function App() {
 
@@ -16,8 +17,10 @@ function App() {
   return (
     <>
       <Header/>
-      <Form InfosCharacter={InfosCharacter}/>
-      {/* <InfoCharacterPage Infos={Infos}/> */}
+      <Routes>
+        <Route path='/' element={<Form InfosCharacter={InfosCharacter}/>}/>
+        <Route path='/info' element={<InfoCharacterPage Infos={Infos}/>}/>
+      </Routes>
     </>
   )
 }

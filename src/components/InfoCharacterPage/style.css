@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
 
+.containerInfos {
+    display: flex;
+    flex-direction: column
+}
+
 .containerName > h2 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -50,4 +55,21 @@
 
 .personalInfos > h3 {
     margin: 10px;
+}
+
+.btnLink {
+    width: 200px;
+    color: black;
+    text-align: center;
+    background-color: var(--AmareloRaikage);
+    text-decoration: none;
+    padding: 8px;
+    margin: 16px auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.483);
+    transition: all, 500ms;
+}
+
+.btnLink:hover {
+    scale: 110%;
 }
