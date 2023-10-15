@@ -13,8 +13,9 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #cccccc, #666666);
+  background-color: var(--Cinza);
   height: 100vh;
   margin: 0; 
   padding: 0; 
+  overflow-x: hidden;
 }

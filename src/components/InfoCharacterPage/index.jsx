@@ -10,17 +10,18 @@ const index = ({ Infos }) => {
                 <h2>{Infos?.name}</h2>
             </div>
             <div className='containerImage'>
-                <img src={Infos?.images[0]} alt="" />
+                {Infos?.images ? <img width={250} src={Infos?.images[0]} alt="Foto do Personagem" /> : null}
+                
             </div>
             <div className='personalInfos'>
-                <h3>Data de aniversário: {Infos.personal?.birthdate}</h3>
-                <h3>Sexo: {Infos.personal?.sex}</h3>
-                {Infos.personal.clan && (
+                {Infos.personal?.birthdate ? <h3>Data de aniversário: {Infos.personal?.birthdate}</h3> : null}
+                {Infos.personal?.sex ? <h3>Sexo: {Infos.personal?.sex}</h3> : null}
+                {Infos.personal?.clan && (
                     <div>
-                        {Array.isArray(Infos.personal.clan) ? (
-                            <h3 className='itemClan'>Clans: {Infos.personal.clan.join(', ')}</h3>
+                        {Array.isArray(Infos.personal?.clan) ? (
+                            <h3 className='itemClan'>Clans: {Infos.personal?.clan.join(', ')}</h3>
                         ) : (
-                            <h3 className='itemClan'>Clan: {Infos.personal.clan}</h3>
+                            <h3 className='itemClan'>Clan: {Infos.personal?.clan}</h3>
                         )}
                     </div> )}
             </div>
