@@ -2,7 +2,7 @@
 
 Wiki Naruto é um projeto online que oferece informações detalhadas sobre o universo de Naruto. O site está hospedado na plataforma Netlify e é destinado para fãs do anime que desejam obter informações sobre os personagens.
 
-# Para utilizar basta colocar o nome completo do personagem que você deseja obter informações.
+Para utilizar basta colocar o nome completo do personagem que você deseja obter informações.
 
 # Tecnologias utilizadas: Vite, React, React Router
 
