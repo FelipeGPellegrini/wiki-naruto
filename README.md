@@ -6,6 +6,8 @@ Para utilizar basta colocar o nome completo do personagem que você deseja obter
 
 # Tecnologias utilizadas: Vite, React, React Router
 
+Ao informar o nome do personagem, a aplicação faz um requisição na API retornando os dados do personagem solicitado.
+
 # 🖥️
 
 ![image](https://github.com/FelipeGPellegrini/wiki-naruto/assets/107892258/a16a4f4f-a1d0-4e62-ad68-39819ed23b65)
