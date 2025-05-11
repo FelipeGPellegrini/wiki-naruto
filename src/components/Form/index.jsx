@@ -17,7 +17,6 @@ const Index = ({ InfosCharacter }) => {
         return response.json();
       })
       .then((characters) => {
-        // Filtra personagem ignorando maiúsculas/minúsculas
         const personagem = characters.find(p =>
           p.name.toLowerCase() === name.toLowerCase()
         );
