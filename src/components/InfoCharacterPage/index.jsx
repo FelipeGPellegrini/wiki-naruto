@@ -1,37 +1,55 @@
-import './style.css'
-import { Link } from 'react-router-dom'
+import './style.css';
+import { Link } from 'react-router-dom';
 
+const Index = ({ Infos }) => {
+  return (
+    <div className='containerInfos'>
+      <div className='card'>
+        <h2 className='characterName'>{Infos?.name}</h2>
 
-const index = ({ Infos }) => {
+        {Infos?.profile_image && (
+          <div className='imageWrapper'>
+            <img src={Infos.profile_image} alt={`Foto de ${Infos.name}`} className='characterImage' />
+          </div>
+        )}
 
-    return (
-        <div className='containerInfos'>
-            <div className='containerName'>
-                <h2>{Infos?.name}</h2>
-            </div>
-            <div className='containerImage'>
-                {Infos?.images ? <img width={250} src={Infos?.images[0]} alt="Foto do Personagem" /> : null}
-                
-            </div>
-            <div className='personalInfos'>
-                {Infos.personal?.birthdate ? <h3>Data de aniversário: {Infos.personal?.birthdate}</h3> : null}
-                {Infos.personal?.sex ? <h3>Sexo: {Infos.personal?.sex}</h3> : null}
-                {Infos.personal?.clan && (
-                    <div>
-                        {Array.isArray(Infos.personal?.clan) ? (
-                            <h3 className='itemClan'>Clans: {Infos.personal?.clan.join(', ')}</h3>
-                        ) : (
-                            <h3 className='itemClan'>Clan: {Infos.personal?.clan}</h3>
-                        )}
-                    </div> )}
-            </div>
-            <div className='containerParents'>
-                {Infos.family?.father ? <h3>Pai: {Infos.family?.father}</h3> : null}
-                {Infos.family?.mother ? <h3>Mãe: {Infos.family?.mother}</h3> : null}
-            </div>
-            <Link className='btnLink' to="/">Fazer um nova pesquisa</Link>
+        <div className='infoSection'>
+          <h3>Resumo</h3>
+          <p>{Infos.summary || "Sem descrição disponível."}</p>
         </div>
-    )
-}
 
-export default index
+        <div className='infoSection'>
+          <h3>Informações Básicas</h3>
+          <p><strong>Vila:</strong> {Infos.village?.name || "Desconhecida"}</p>
+          <p><strong>Rank:</strong> {Infos.rank || "Desconhecido"}</p>
+          <p><strong>Poder:</strong> {Infos.power || "Desconhecido"}</p>
+        </div>
+
+        <div className='infoSection'>
+          <h3>Família</h3>
+          <p><strong>Pai:</strong> {Infos.father || "Não informado"}</p>
+          <p><strong>Mãe:</strong> {Infos.mother || "Não informado"}</p>
+        </div>
+
+        <div className='infoSection'>
+          <h3>Jutsus Conhecidos</h3>
+          {Infos.jutsus && Infos.jutsus.length > 0 ? (
+            <ul>
+              {Infos.jutsus.map((jutsu) => (
+                <li key={jutsu.id}>
+                  <strong>{jutsu.name}</strong> — {jutsu.description} (Poder: {jutsu.power})
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Nenhum jutsu listado.</p>
+          )}
+        </div>
+
+        <Link className='btnLink' to="/">🔙 Nova Pesquisa</Link>
+      </div>
+    </div>
+  );
+};
+
+export default Index;

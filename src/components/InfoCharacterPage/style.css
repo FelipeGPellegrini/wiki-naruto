@@ -1,75 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
 
+:root {
+  --AmareloRaikage: #f7c000;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
 .containerInfos {
-    display: flex;
-    flex-direction: column
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.containerName > h2 {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    margin-top: 32px;
-    text-shadow: 1px 2px 1px var(--AmareloRaikage);
-    font-size: 32px;
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
-.containerImage {
-    margin-top: 10px;
-    text-align: center;
+.characterName {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 1px 2px 1px var(--AmareloRaikage);
 }
 
-.containerImage > img {
-    border-radius: 10%;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.441);
-    transition: all 500ms;
+.imageWrapper {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.containerImage > img:hover {
-    scale: 120%;
+.characterImage {
+  width: 250px;
+  border-radius: 10%;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.441);
+  transition: transform 0.5s ease;
+  max-width: 100%;
+  height: auto;
 }
 
-.containerParents {
-    font-family: 'Roboto', sans-serif;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 20px;
-    text-shadow: 1px 2px 1px var(--AmareloRaikage);
+.characterImage:hover {
+  transform: scale(1.1);
 }
 
-.containerParents > h3 {
-    margin: 10px;
+.infoSection {
+  margin-top: 20px;
 }
 
-.itemClan {
-    display: inline;
+.infoSection h3 {
+  color: #222;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-.personalInfos {
-    font-family: 'Roboto', sans-serif;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 20px;
-    text-shadow: 1px 2px 2px var(--AmareloRaikage);
-    font-size: 16px;
-}
-
-.personalInfos > h3 {
-    margin: 10px;
+.infoSection p,
+.infoSection li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
 }
 
 .btnLink {
-    width: 200px;
-    color: black;
-    text-align: center;
-    background-color: var(--AmareloRaikage);
-    text-decoration: none;
-    padding: 8px;
-    margin: 16px auto;
-    border-radius: 10px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.483);
-    transition: all, 500ms;
+  width: 200px;
+  color: black;
+  text-align: center;
+  background-color: var(--AmareloRaikage);
+  text-decoration: none;
+  padding: 10px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.48);
+  transition: transform 0.3s ease-in-out;
+  display: block;
 }
 
 .btnLink:hover {
-    scale: 110%;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .characterName {
+    font-size: 24px;
+  }
+
+  .infoSection h3 {
+    font-size: 18px;
+  }
+
+  .infoSection p,
+  .infoSection li {
+    font-size: 14px;
+  }
+
+  .btnLink {
+    width: 90%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .characterImage {
+    width: 80%;
+  }
+
+  .card {
+    padding: 16px;
+  }
 }
